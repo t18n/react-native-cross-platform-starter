@@ -1,0 +1,28 @@
+{
+  // More config: https://www.staging-typescript.org/tsconfig
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": [
+        "src/*"
+      ],
+    },
+    "moduleResolution": "node",
+    "lib": ["es6", "dom", "ES2019.Array"],
+    "target": "es5", // Define generated code generation
+    "jsx": "react",
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "isolatedModules": true, 
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "exclude": [
+    "node_modules",
+  ]
+}

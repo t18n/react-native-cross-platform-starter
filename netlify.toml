@@ -1,0 +1,4 @@
+[build]
+  command = "yarn web:build"
+  publish = ".dist"
+  environment = { NODE_VERSION = "v14.15.0", YARN_VERSION = "1.22.4" }
