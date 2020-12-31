@@ -6,7 +6,7 @@ Production ready starter to build cross platform app with React Native.
   - [x] Run on iOS with `react-native`
   - [x] Run on Android  with `react-native`
   - [x] Run on web with `react-native-web`
-  - [ ] Run on desktop with `electron`
+  - [x] Run on desktop with `electron`
 - Development
   - [x] Testing with `Jest`'
   - [x] Absolute import paths
@@ -29,6 +29,7 @@ Production ready starter to build cross platform app with React Native.
 - In the root folder, run `yarn && yarn app:dep` to install the dependencies. 
 - Run the app: On terminal 1, run packager with `yarn app:start`. On terminal 2, run `yarn ios` or `yarn android` for respective platform.
 - Run on web: Run `yarn web:dev`
+- Run on desktop: `yarn electron`
 
 ### Set you your brand
 - Change project name: Inside root folder, run `npx react-native-rename <your-new-project-name>` to rename the app
