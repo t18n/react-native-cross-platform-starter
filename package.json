@@ -40,7 +40,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn typecheck && yarn lint && yarn i18n:extract",
-      "pre-push": "yarn jest --coverage --changedSince=origin/master"
+      "pre-push": "yarn jest --coverage --changedSince=origin/main"
     }
   },
   "dependencies": {
