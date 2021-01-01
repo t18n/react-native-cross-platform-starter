@@ -1,4 +1,4 @@
-# Brightizen Apps
+# React Native Cross-platform Apps
 Production ready starter to build cross platform app with React Native.
 
 ## Features
