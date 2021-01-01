@@ -53,7 +53,7 @@ For development on the web, you can also install [Redux-Debugger Chrome extensio
 - Codepush
 
 ## Contribution
-I do accept PRs, so please feel free to create PRs. It is prefered that the commits are following [Conventional Commit]()
+I do accept PRs, so please feel free to create PRs. It is prefered that the commits are following [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/#summary)
 
 ## License
 This project is licensed under MIT License.
