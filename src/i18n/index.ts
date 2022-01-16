@@ -11,6 +11,7 @@ const defaultNamespace = 'translation';
 // Define option
 // https://www.i18next.com/overview/configuration-options
 const options: InitOptions = {
+  compatibilityJSON: 'v3',
   fallbackLng: 'en',
   defaultNS: defaultNamespace,
   load: 'languageOnly',
@@ -40,15 +41,21 @@ const options: InitOptions = {
 };
 
 // Initialize i18n
-i18n
-  .use(initReactI18next) // pass the i18n instance to react-i18next.
-  .use(languageDetector)
-  .init(options, (err, t) => {
-    if (err) {
-      throw err;
-    }
+let isI18nInit = false;
 
-    console.log(t('Language translation is ready!'));
-  });
+export const initI18n = () => {
+  if (isI18nInit) return;
 
-export default i18n;
+  i18n
+    .use(initReactI18next) // pass the i18n instance to react-i18next.
+    .use(languageDetector)
+    .init(options, (err, t) => {
+      if (err) {
+        throw err;
+      }
+
+      isI18nInit = true;
+
+      console.log(t('Language translation is ready!'));
+    });
+}
