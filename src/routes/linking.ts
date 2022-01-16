@@ -2,8 +2,8 @@ import { LinkingOptions } from '@react-navigation/native';
 
 /** Link prefixes/domains for deep linking */
 const linkingPrefixes = [
-  'https://brightizen.app',
-  'brightizen://',
+  'https://rnStarter.app',
+  'rnStarter://',
 ];
 
 export const linking: LinkingOptions = {

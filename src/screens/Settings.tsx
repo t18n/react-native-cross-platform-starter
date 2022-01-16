@@ -44,7 +44,7 @@ export const Settings = () => {
         <Button onPress={() => changeLanguage('vi')} title={t('vietnamese')} />
       </View>
       <Text style={[styles.footer, { color: theme.palette.onBackground }]} accessibilityRole="header" aria-level="2">
-        {platform}
+        {platform}  
         </Text>
     </View>
   );

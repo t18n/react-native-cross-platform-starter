@@ -4,7 +4,7 @@ import ReactotronFlipper from "reactotron-react-native/dist/flipper"
 
 if (__DEV__) {
   Reactotron.configure({
-    name: "Brightizen",
+    name: "RN Cross-platform Starter",
     createSocket: path => new ReactotronFlipper(path),
   })
   .useReactNative({
