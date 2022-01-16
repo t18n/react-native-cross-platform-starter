@@ -34,11 +34,10 @@ module.exports = {
 
   // Config for dev server
   devServer: {
-    contentBase: path.join(__dirname, '.dist'),
+    static: path.join(__dirname, '.dist'),
     hot: true,
     open: true,
     compress: true,
-    publicPath: '/',
     host: '0.0.0.0', // 0.0.0.0 allow server to be accessible externally within LAN
     historyApiFallback: true, // enable to use index.html as 404 fallback - necessary when developing to avoid 404 on paths that exist
   },
@@ -139,6 +138,6 @@ module.exports = {
   },
 
   performance: {
-    hints: __DEV__ ? 'warning' : false,
+    hints: false,
   },
 };

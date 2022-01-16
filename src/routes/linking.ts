@@ -1,12 +1,11 @@
-import { LinkingOptions } from '@react-navigation/native';
-
 /** Link prefixes/domains for deep linking */
 const linkingPrefixes = [
   'https://rnStarter.app',
   'rnStarter://',
 ];
 
-export const linking: LinkingOptions = {
+// FIXME: Better type
+export const linking = {
   prefixes: linkingPrefixes,
   config: {
     screens: {

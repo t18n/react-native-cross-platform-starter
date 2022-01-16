@@ -3,9 +3,8 @@ Production ready starter to build cross platform app with React Native.
 
 
 ## Getting started
-- Folk or clone this project
-- In the root folder, run `yarn && yarn app:dep` to install the dependencies. 
-- Run the app: On terminal 1, run packager with `yarn app:start`. On terminal 2, run `yarn ios` or `yarn android` for respective platform.
+- `git clone git@github.com:turbothinh/react-native-cross-platform-starter.git && cd react-native-cross-platform-starter && yarn && yarn app:dep`
+- Run the app: On terminal 1, run packager with `yarn app:start`. On terminal 2, run `yarn ios` or `yarn android` for respective platform. Don't run both commands at the same time.
 - Run on web: Run `yarn web:dev`
 - Run on desktop: `yarn electron`
 

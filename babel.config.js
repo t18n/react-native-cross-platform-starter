@@ -10,6 +10,8 @@ module.exports = {
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     ['@babel/plugin-proposal-optional-chaining', {}],
 
+    'react-native-reanimated/plugin',
+
     // Module resolver
     ['module-resolver', {
         root: ['./src'],

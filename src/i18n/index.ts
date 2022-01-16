@@ -23,7 +23,7 @@ const options: InitOptions = {
   },
 
   react: {
-    wait: true, // Set to true if you like to wait for loaded in every translated hoc
+    // wait: true, // Set to true if you like to wait for loaded in every translated hoc
     bindI18n: 'languageChanged', // Set which events trigger a re-render
   },
 
