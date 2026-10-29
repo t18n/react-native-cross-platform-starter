@@ -1,0 +1,20 @@
+{
+  "name": "rnstarter-linux",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Linux desktop shell for the rnStarter web build",
+  "author": "rnStarter",
+  "homepage": "https://github.com/turbothinh/react-native-cross-platform-starter",
+  "desktopName": "rnStarter.desktop",
+  "main": "main.js",
+  "scripts": {
+    "sync": "rm -rf app && cp -R ../.dist app",
+    "start": "electron .",
+    "smoke": "SMOKE_TEST=1 electron . --no-sandbox",
+    "build": "yarn sync && electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0"
+  }
+}

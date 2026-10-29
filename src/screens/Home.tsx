@@ -4,27 +4,27 @@ import { useThemeSystem } from 'src/contexts/ThemeContext';
 import { View, Text, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1, justifyContent: 'center', alignItems: 'center',
-  },
-  text: {
-    fontSize: 30
-  }
+    container: {
+        flex: 1, justifyContent: 'center', alignItems: 'center',
+    },
+    text: {
+        fontSize: 30
+    }
 })
 
 export const Home = () => {
-  const { t } = useTranslation();
-  const { theme } = useThemeSystem();
+    const { t } = useTranslation();
+    const { theme } = useThemeSystem();
 
-  return (
-    <View style={[styles.container, { backgroundColor: theme.palette.background }]}>
-      <Text
-        style={[styles.text, { color: theme.palette.onBackground }]}
-        accessibilityRole="header"
-        aria-level="2"
-      >
-        {t('Home')}
-      </Text>
-    </View>
-  );
+    return (
+        <View style={[styles.container, { backgroundColor: theme.palette.background }]}>
+            <Text
+                style={[styles.text, { color: theme.palette.onBackground }]}
+                accessibilityRole="header"
+                aria-level="2"
+            >
+                {String(t('Home'))}
+            </Text>
+        </View>
+    );
 };

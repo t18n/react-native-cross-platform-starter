@@ -6,7 +6,9 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
   testPathIgnorePatterns: ['\\.snap$', '<rootDir>/node_modules/'],
-  transformIgnorePatterns: ['node_modules/?!(static-container)'],
+  transformIgnorePatterns: [
+    'node_modules/(?!((jest-)?react-native|@react-native(-community|-async-storage)?|@react-navigation|immer|react-redux|react-native-svg)/)',
+  ],
   cacheDirectory: '.jest/cache',
   globals: {
     'ts-jest': {

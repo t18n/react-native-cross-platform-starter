@@ -1,0 +1,16 @@
+appId: com.rnstarter.desktop
+productName: rnStarter
+directories:
+  output: dist
+files:
+  - main.js
+  - app/**/*
+  - package.json
+asar: true
+linux:
+  syncDesktopName: true
+  target:
+    - AppImage
+    - deb
+  category: Utility
+  maintainer: rnStarter maintainers <maintainers@example.com>

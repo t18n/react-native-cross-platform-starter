@@ -1,26 +1,11 @@
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-
-/**
- * Plugins: Order of including these plugins matters
- */
+  presets: ['module:@react-native/babel-preset'],
   plugins: [
-    // ES Features
-    ['@babel/plugin-proposal-decorators', { legacy: true }],
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
-    ['@babel/plugin-proposal-optional-chaining', {}],
-
-    'react-native-reanimated/plugin',
-
-    // Module resolver
     ['module-resolver', {
-        root: ['./src'],
-        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
-        alias: {
-          src: './src',
-        },
-      },
-    ],
+      root: ['./src'],
+      extensions: ['.macos.js', '.windows.js', '.ios.js', '.android.js', '.web.js', '.js', '.ts', '.tsx', '.json'],
+      alias: { src: './src' },
+    }],
   ],
 
   env: {

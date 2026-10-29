@@ -1,7 +1,6 @@
-import { NavigationAction, NavigationContainerRef } from '@react-navigation/native';
-import React from 'react';
+import { createNavigationContainerRef, NavigationAction } from '@react-navigation/native';
 
-export const navigationRef: React.RefObject<NavigationContainerRef<any>> = React.createRef();
+export const navigationRef = createNavigationContainerRef<any>();
 
 export default class NavigationService {
   public static isReady: boolean;

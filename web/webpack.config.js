@@ -45,6 +45,10 @@ module.exports = {
   // Module rules
   module: {
     rules: [
+      {
+        test: /\.m?js$/,
+        resolve: { fullySpecified: false },
+      },
       babelLoader,
       imageFilesLoader,
       fontsLoader,
@@ -56,8 +60,6 @@ module.exports = {
   resolve: {
     alias: {
       'react-native$': 'react-native-web',
-      'i18next-react-native-async-storage$': 'i18next-browser-languagedetector',
-      'react-native-feather': 'react-feather'
     },
 
     /**

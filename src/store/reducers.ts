@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { userReducers } from './user';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistReducer } from 'redux-persist';
 
 export const rootReducer = combineReducers({

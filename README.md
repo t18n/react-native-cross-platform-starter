@@ -1,59 +1,60 @@
 # React Native Cross-platform Apps
-Production ready starter to build cross platform app with React Native.
+Starter project for iOS, Android, macOS, Windows, Linux, and web.
 
+## Requirements
+- Node.js 22 or newer and Yarn 1.22 or newer.
+- Xcode and CocoaPods for iOS/macOS development.
+- Android Studio and the Android SDK for Android development.
+- Windows 10/11 with the React Native Windows development dependencies and Visual Studio 2022 for Windows builds. Windows apps cannot be built on macOS.
 
-## Getting started
-- `git clone git@github.com:turbothinh/react-native-cross-platform-starter.git && cd react-native-cross-platform-starter && yarn && yarn app:dep`
-- Run the app: On terminal 1, run packager with `yarn app:start`. On terminal 2, run `yarn ios` or `yarn android` for respective platform. Don't run both commands at the same time.
-- Run on web: Run `yarn web:dev`
-- Run on desktop: `yarn electron`
+## Install
+```sh
+yarn install
+yarn app:dep
+```
 
-### Set you your brand
-- Change project name: Inside root folder, run `npx react-native-rename <your-new-project-name>` to rename the app
-- With your IDE, global search and replace `rnStarter`
-- Change project icon: Replace the `icon.png` and `logo.png` inside `public/assets` folder with your own assets. Then run `yarn generate:icon && yarn generate:bootsplash`
+`yarn app:dep` installs CocoaPods for iOS and macOS. On Windows, install the Windows prerequisites from the [React Native Windows guide](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
 
-### Set up deep linking
-- Follow [React-Navigation guide](https://reactnavigation.org/docs/deep-linking#set-up-with-bare-react-native-projects) to replace the existing deep-linking prefixes with your domains
+## Run
+Start Metro in one terminal:
+```sh
+yarn app:start
+```
 
-## Development
-### Debug app with Flipper
-This project comes with some Flipper integrations by default. You should install Flipper for desktop together with these plugins for development:
-- [Async storage](https://github.com/Fausto95/rn-async-storage-flipper)
-- [Reactotron](https://www.npmjs.com/package/flipper-plugin-reactotron)
-- [Redux-debugger](flipper-plugin-redux-debugger)
+Run a platform in another terminal:
+```sh
+yarn ios
+yarn android
+yarn macos
+yarn windows
+yarn web:dev
+```
 
-### Debug app on web
-For development on the web, you can also install [Redux-Debugger Chrome extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+`yarn macos` requires macOS. `yarn windows` requires Windows and Visual Studio. For Windows packaging, open `windows/rnStarter.sln` in Visual Studio and build the Release configuration. The native desktop targets were initialized with React Native Windows' New Architecture template.
 
-## Tool recommendations
-- Fastlane
-- Codepush
+## Linux
+The Linux app is the web build packaged in an Electron shell located in `linux/` (not native UI).
+```sh
+yarn linux:install   # install the shell's dependencies
+yarn linux:dev       # build the web bundle and open it in Electron
+yarn linux:build     # produce linux/dist/*.AppImage and *.deb
+```
+Before publishing, replace the placeholder `maintainer` in `linux/electron-builder.yml`, update `homepage` in `linux/package.json`, and add an app icon. CI (`.github/workflows/linux.yml`) builds the packages and runs a headless smoke test.
 
-## Features
-- Platforms
-  - [x] Run on iOS with `react-native`
-  - [x] Run on Android  with `react-native`
-  - [x] Run on web with `react-native-web`
-  - [x] Run on desktop with `electron`
-- Development
-  - [x] Testing with `Jest`'
-  - [x] Absolute import paths
-  - [x] Webpack loaders for JS, TS, fonts, files included
-  - [x] Native debuggers with Flipper: reactotron, redux-debugger, etc
-  - [x] Redux debuggger for web
-- Design
-  - [x] Design system with Dark mode
-  - [x] Icons with `eva-icons`
-  - [x] Render semantic tags like H1, H2, H3 tag on web for better SEO
-- Libraries
-  - [x] `Redux` + `Redux-Toolkit` for state management + `Persist-storage`
-  - [x] i18n with `i18next`
-  - [x] Tab navigation with `react-navigation`
-  - [x] Deep linking
+## Project Scripts
+- `yarn typecheck`, `yarn lint`, and `yarn test` run the static checks and Jest suite.
+- `yarn web:build` creates the web production bundle.
+- `yarn ios:pod:install` and `yarn macos:pod:install` install Apple platform pods.
 
-## Contribution
-I do accept PRs, so please feel free to create PRs. It is prefered that the commits are following [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+## Deep Linking
+Update the prefixes in `src/routes/linking.ts` and the platform URL configuration for your app domains. See the [React Navigation deep linking guide](https://reactnavigation.org/docs/deep-linking/).
+
+## Platforms
+- iOS and Android use the React Native CLI.
+- macOS uses [React Native macOS](https://microsoft.github.io/react-native-macos/docs/getting-started).
+- Windows uses [React Native Windows](https://microsoft.github.io/react-native-windows/docs/getting-started/).
+- Web uses React Native Web and Webpack.
+- Linux wraps the web build in Electron.
 
 ## License
 This project is licensed under MIT License.

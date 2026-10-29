@@ -1,11 +1,25 @@
 import i18n, { InitOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-react-native-async-storage';
+import BrowserLanguageDetector from 'i18next-browser-languagedetector';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import transEN from './en/translation.json';
 import transVI from './vi/translation.json';
 import { Platform } from 'react-native';
 
-const languageDetector = Platform.OS !== 'web' ? LanguageDetector('en') : LanguageDetector;
+const nativeLanguageDetector = {
+  type: 'languageDetector' as const,
+  async: true,
+  init: () => undefined,
+  detect: (callback: (language: string) => void) => {
+    AsyncStorage.getItem('language')
+      .then((language) => callback(language || 'en'))
+      .catch(() => callback('en'));
+  },
+  cacheUserLanguage: (language: string) => {
+    void AsyncStorage.setItem('language', language);
+  },
+};
+const languageDetector = Platform.OS === 'web' ? BrowserLanguageDetector : nativeLanguageDetector;
 const defaultNamespace = 'translation';
 
 // Define option
@@ -48,7 +62,7 @@ export const initI18n = () => {
 
   i18n
     .use(initReactI18next) // pass the i18n instance to react-i18next.
-    .use(languageDetector)
+    .use(languageDetector as any)
     .init(options, (err, t) => {
       if (err) {
         throw err;

@@ -1,20 +1,16 @@
 import { persistStore } from 'redux-persist';
-import { middleware } from './middlewares';
 import { persistedReducer } from './reducers';
 import { configureStore } from '@reduxjs/toolkit';
-
-/**
- * Add Redux flipper
- */
-if (__DEV__) {
-  const createDebugger = require('redux-flipper').default;
-  middleware.push(createDebugger());
-}
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware,
-  devTools: false, // Disable Redux dev-tools on mobile app
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
+  devTools: __DEV__,
 });
 
 export const persistor = persistStore(store);

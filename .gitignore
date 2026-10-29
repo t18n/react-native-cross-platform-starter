@@ -16,6 +16,7 @@ xcuserdata
 *.xccheckout
 *.moved-aside
 DerivedData
+.xcode.env.local
 *.hmap
 *.ipa
 *.xcuserstate
@@ -23,6 +24,7 @@ DerivedData
 # Android/IntelliJ
 #
 build/
+.cxx/
 .idea
 .gradle
 local.properties
@@ -85,4 +87,5 @@ credentials
 # Builds
 .dist/
 build/
-electron/
+linux/app/
+linux/dist/

@@ -1,0 +1,29 @@
+name: Linux
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn linux:install
+      - run: yarn typecheck
+      - run: yarn test --runInBand
+      - run: yarn linux:build
+      - run: sudo apt-get update && sudo apt-get install -y xvfb libgtk-3-0 libnss3 libasound2t64
+      - run: xvfb-run -a yarn linux:smoke
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-packages
+          path: |
+            linux/dist/*.AppImage
+            linux/dist/*.deb

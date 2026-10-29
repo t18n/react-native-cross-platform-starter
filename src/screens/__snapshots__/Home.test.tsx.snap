@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Should match snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      {
+        "backgroundColor": "#f7f7f8",
+      },
+    ]
+  }
+>
+  <Text
+    accessibilityRole="header"
+    aria-level="2"
+    style={
+      [
+        {
+          "fontSize": 30,
+        },
+        {
+          "color": "#000014",
+        },
+      ]
+    }
+  >
+    Home
+  </Text>
+</View>
+`;

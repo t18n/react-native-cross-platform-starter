@@ -13,10 +13,9 @@ const babelLoader = {
   include: [
     path.resolve(appDirectory, 'web'),
     path.resolve(appDirectory, 'src'),
-    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
-    path.resolve(appDirectory, 'node_modules/react-native-flipper'),
-    path.resolve(appDirectory, 'node_modules/rn-async-storage-flipper'),
-    path.resolve(appDirectory, 'node_modules/reactotron-react-native')
+    path.resolve(appDirectory, 'node_modules/lucide-react-native'),
+    path.resolve(appDirectory, 'node_modules/react-native-svg'),
+    path.resolve(appDirectory, 'node_modules/@react-native-async-storage/async-storage')
   ],
   use: {
     loader: 'babel-loader',
@@ -61,7 +60,6 @@ const fontsLoader = {
   test: /\.(ttf|otf)$/,
   loader: "url-loader",
   include: [
-    path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
     path.resolve(__dirname, 'app/assets/fonts'),
   ]
 };
