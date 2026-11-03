@@ -15,7 +15,6 @@ const babelLoader = {
     path.resolve(appDirectory, 'src'),
     path.resolve(appDirectory, 'node_modules/lucide-react-native'),
     path.resolve(appDirectory, 'node_modules/react-native-svg'),
-    path.resolve(appDirectory, 'node_modules/@react-native-async-storage/async-storage')
   ],
   use: {
     loader: 'babel-loader',

@@ -15,6 +15,13 @@ yarn app:dep
 
 `yarn app:dep` installs CocoaPods for iOS and macOS. On Windows, install the Windows prerequisites from the [React Native Windows guide](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
 
+### macOS setup
+The macOS build needs CocoaPods, which needs a modern Ruby (the system Ruby 2.6 is too old). Install Ruby (for example with [mise](https://mise.jdx.dev): `mise use -g ruby@3.3`), then:
+```sh
+gem install cocoapods
+cd macos && pod install
+```
+
 ## Run
 Start Metro in one terminal:
 ```sh

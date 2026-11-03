@@ -13,9 +13,9 @@ export const BottomTabs = () => {
     const { theme } = useThemeSystem();
 
     return (
-        <Tab.Navigator initialRouteName="home">
+        <Tab.Navigator initialRouteName="Home">
             <Tab.Screen
-                name="HomeStack"
+                name="Home"
                 component={Home}
                 options={{
                     tabBarLabel: t('home'),
